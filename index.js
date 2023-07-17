@@ -70,3 +70,42 @@ videoCards.forEach(item => {
         video.pause();
     })
 });
+
+
+// SCROLL CARDS 
+let cardContainers = document.querySelectorAll('.card-container');
+let prvBtns = document.querySelectorAll('.prv-btn');
+let nxtBtns = document.querySelectorAll('.nxt-btn');
+
+cardContainers.forEach((item, i) => {
+    let containerDimensions = item.getBoundingClientRect();
+    let containerWidth = containerDimensions.width
+
+    nxtBtns[i].addEventListener('click', () => {
+        item.scrollLeft += containerWidth - 200;
+    })
+
+    prvBtns[i].addEventListener('click', () => {
+        item.scrollLeft -= containerWidth + 200;
+    })
+})
+
+
+// SCROLL 1 SINGLE CARD
+
+// let cardContainers = document.querySelectorAll('.card-container');
+// let prvBtns = document.querySelectorAll('.prv-btn');
+// let nxtBtns = document.querySelectorAll('.nxt-btn');
+
+// cardContainers.forEach((item, i) => {
+//     let containerWidth = item.offsetWidth;
+//     let cardWidth = item.querySelector('.card').offsetWidth;
+
+//     nxtBtns[i].addEventListener('click', () => {
+//         item.scrollLeft += cardWidth;
+//     });
+
+//     prvBtns[i].addEventListener('click', () => {
+//         item.scrollLeft -= cardWidth;
+//     });
+// });
